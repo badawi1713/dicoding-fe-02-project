@@ -1,6 +1,6 @@
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by accent */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -15,9 +15,20 @@
 .modal-content__container {
     overflow: auto;
     background-color: var(--color-white);
-    margin: 0 auto; /* 15% from the top and centered */
-    width: 100%; /* Could be more or less, depending on screen size */
-    max-width: 80%; /* Could be more or less, depending on screen size */
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 80%; 
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--rounded-md);
+}
+
+.modal-content__container--md {
+    overflow: auto;
+    background-color: var(--color-white);
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 360px; 
     display: flex;
     flex-direction: column;
     border-radius: var(--rounded-md);
@@ -36,14 +47,14 @@
 
 .modal-content__title h2 {
    font-weight: 700;
-   font-size: var(--text-lg);
+   font-size: var(--text-xl);
    color: var(--color-black);
 }
 
 /* The Close Button */
 .close {
     color: var(--color-black);
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     font-weight: 700;
 }
 
@@ -51,6 +62,22 @@
 .close:focus {
     text-decoration: none;
     cursor: pointer;
+}
+
+.modal-content__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-8);
+    align-items: stretch;
+    background-color: var(--color-white);
+    padding: var(--padding-6);
+    border-bottom-left-radius: var(--rounded-md);
+    border-bottom-right-radius: var(--rounded-md);
+}
+
+.modal-content__description > p {
+    font-size: var(--text-lg);
+    color: var(--color-black);
 }
 
 .modal-content__form {
@@ -127,5 +154,34 @@
 
 .action-group__button--secondary:hover, .action-group__button--secondary:active {
     background-color: var(--color-secondary-focus);
+    color: var(--color-black);
+}
+
+.action-group__button--danger,
+.action-group__button--accent {
+    padding: var(--padding-4);
+    border-radius: var(--rounded-sm);
+    font-size: var(--text-sm);
+    width: 64px;
+}
+
+.action-group__button--danger {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.action-group__button--danger:hover,
+.action-group__button--danger:active {
+    background-color: var(--color-danger-focus);
+}
+
+.action-group__button--accent {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+
+.action-group__button--accent:hover,
+.action-group__button--accent:active {
+    background-color: var(--color-accent-focus);
     color: var(--color-black);
 }

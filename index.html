@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 - My Bookshelf</title>
+    <meta name="description" content="Dicoding - Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage">
+    <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Dicoding, Bookshelf">
+    <meta name="author" content="Dzaky Badawi">
+    <title>📚 - Bookshelf App</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/snackbar.css">
 </head>
 
 <body>
@@ -16,50 +20,84 @@
             <h1>Bookshelf Management</h1>
         </div>
     </header>
-    <main>
+    <main id="bookshelfContent">
+        <div class="search-form__container">
+            <form id="searchForm" class="search-form">
+                <input class="search-form__input" type="text" placeholder="Search book's title" name="searchInput"
+                    id="searchInput" />
+                <button class="search-form__button" type="submit">Find 🔍</button>
+            </form>
+        </div>
         <div class="add__button">
             <button id="openFormModalButton">Add New Book</button>
         </div>
         <div id="formModal" class="modal">
 
-            <!-- Modal content -->
             <div class="modal-content__container">
                 <section class="modal-content__title">
-                    <h2>Create New Book</h2>
+                    <h2 id="formTitle">Add New Book</h2>
                     <span id="closeFormModalButton" class="close">&times;</span>
                 </section>
                 <form id="bookForm" class="modal-content__form">
                     <div class="input-group__container">
                         <label class="input-group__label">Title</label>
-                        <input class="input-group__input" placeholder="Book's title" name="title" id="title"
+                        <input required class="input-group__input" placeholder="Book's title" name="title" id="title"
                             type="text" />
                     </div>
                     <div class="input-group__container">
                         <label class="input-group__label">Author</label>
-                        <input class="input-group__input" placeholder="Book's author" name="author" id="author"
+                        <input required class="input-group__input" placeholder="Book's author" name="author" id="author"
                             type="text" />
                     </div>
                     <div class="input-group__container">
                         <label class="input-group__label">Year</label>
-                        <input class="input-group__input" placeholder="Book's released year" name="year" id="year"
-                            type="number" />
+                        <input required class="input-group__input" placeholder="Book's released year" name="year"
+                            id="year" type="number" />
                     </div>
                     <div class="input-group__container--checkbox">
-                        <label class="input-group__label" for="isRead">Is Readed?</label>
-                        <input class="input-group__input" type="checkbox" id="isRead" name="isRead" />
+                        <label class="input-group__label" for="isComplete">Already read it?</label>
+                        <input class="input-group__input" type="checkbox" id="isComplete" name="isComplete" />
                     </div>
                     <div class="action-group__container">
-                        <button id="cancelFormModalButton" type="button" class="action-group__button--secondary">Cancel</button>
+                        <button id="cancelFormModalButton" type="button"
+                            class="action-group__button--secondary">Cancel</button>
                         <button type="submit" class="action-group__button--primary">Save</button>
                     </div>
                 </form>
             </div>
 
         </div>
-        <div class="empty-illustration__container">
-            <img width="100%" src="./assets/images/ill-empty-data.svg" alt="empty-data" />
-            <p>There is no books found, please add some.</p>
+        <div id="confirmModal" class="modal">
+
+            <div class="modal-content__container--md">
+                <section class="modal-content__title">
+                    <h2>Book Delete Confirmation</h2>
+                </section>
+                <div class="modal-content__description">
+                    <p>Confirm to delete this book?</p>
+                    <div class="action-group__container">
+                        <button id="cancelConfirmModalButton" type="button"
+                            class="action-group__button--accent">Cancel</button>
+                        <button id="deleteConfirmModalButton" type="button"
+                            class="action-group__button--danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <section id="bookshelves" class="shelves-section__container">
+            <div id="unreadShelves" class="shelves__container">
+                <h3>Not finished reading yet 📖</h3>
+                <div id="unreadList" class="book-list__container"></div>
+            </div>
+            <div id="readShelves" class="shelves__container">
+                <h3>Finished reading 📕</h3>
+                <div id="readList" class="book-list__container"></div>
+            </div>
+        </section>
+
+        <div id="snackbar"></div>
 
     </main>
     <script src="./js/index.js"></script>
