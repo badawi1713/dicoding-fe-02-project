@@ -266,7 +266,7 @@ function renderEmptyIllustration() {
   const emptyShelvesIllustration = document.createElement("img");
   emptyShelvesIllustration.setAttribute(
     "src",
-    "../assets/images/ill-empty-data.svg"
+    "assets/images/ill-empty-data.svg"
   );
   emptyShelvesIllustration.setAttribute("alt", "empty");
 
