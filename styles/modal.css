@@ -1,23 +1,21 @@
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by accent */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
 .modal-content__container {
     overflow: auto;
     background-color: var(--color-white);
-    margin: 0 auto; 
-    width: 100%; 
-    max-width: 80%; 
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     border-radius: var(--rounded-md);
@@ -26,9 +24,9 @@
 .modal-content__container--md {
     overflow: auto;
     background-color: var(--color-white);
-    margin: 0 auto; 
-    width: 100%; 
-    max-width: 360px; 
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
     display: flex;
     flex-direction: column;
     border-radius: var(--rounded-md);
@@ -46,12 +44,11 @@
 }
 
 .modal-content__title h2 {
-   font-weight: 700;
-   font-size: var(--text-xl);
-   color: var(--color-black);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--color-black);
 }
 
-/* The Close Button */
 .close {
     color: var(--color-black);
     font-size: var(--text-2xl);
@@ -91,9 +88,10 @@
     border-bottom-right-radius: var(--rounded-md);
 }
 
-.input-group__container, .input-group__container--checkbox {
- display: flex;
- gap: var(--margin-4);
+.input-group__container,
+.input-group__container--checkbox {
+    display: flex;
+    gap: var(--margin-4);
 }
 
 .input-group__container {
@@ -104,20 +102,22 @@
     font-size: var(--text-sm);
 }
 
-.input-group__input[type=text], .input-group__input[type=number] {
+.input-group__input[type="text"],
+.input-group__input[type="number"] {
     border: 1px solid var(--color-primary);
     border-radius: var(--rounded-sm);
     padding: var(--padding-4);
     font-size: var(--text-sm);
 }
 
-.input-group__input[type=text]:focus, .input-group__input[type=number]:focus {
+.input-group__input[type="text"]:focus,
+.input-group__input[type="number"]:focus {
     border: 1.5px solid var(--color-primary-focus);
     outline-width: 1px;
     outline-color: var(--color-primary-focus);
 }
 
-.input-group__input[type=checkbox] {
+.input-group__input[type="checkbox"] {
     cursor: pointer;
     accent-color: var(--color-background);
     transform: scale(1.2);
@@ -131,7 +131,8 @@
     gap: var(--margin-8);
 }
 
-.action-group__button--primary, .action-group__button--secondary {
+.action-group__button--primary,
+.action-group__button--secondary {
     padding: var(--padding-4);
     border-radius: var(--rounded-sm);
     font-size: var(--text-sm);
@@ -143,7 +144,8 @@
     color: var(--color-white);
 }
 
-.action-group__button--primary:hover, .action-group__button--primary:active {
+.action-group__button--primary:hover,
+.action-group__button--primary:active {
     background-color: var(--color-primary-focus);
 }
 
@@ -152,7 +154,8 @@
     color: var(--color-black);
 }
 
-.action-group__button--secondary:hover, .action-group__button--secondary:active {
+.action-group__button--secondary:hover,
+.action-group__button--secondary:active {
     background-color: var(--color-secondary-focus);
     color: var(--color-black);
 }
