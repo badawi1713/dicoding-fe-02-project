@@ -1,0 +1,131 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content__container {
+    overflow: auto;
+    background-color: var(--color-white);
+    margin: 0 auto; /* 15% from the top and centered */
+    width: 100%; /* Could be more or less, depending on screen size */
+    max-width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--rounded-md);
+}
+
+.modal-content__title {
+    display: flex;
+    gap: var(--margin-4);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-background);
+    padding: var(--padding-6);
+    border-top-left-radius: var(--rounded-md);
+    border-top-right-radius: var(--rounded-md);
+}
+
+.modal-content__title h2 {
+   font-weight: 700;
+   font-size: var(--text-lg);
+   color: var(--color-black);
+}
+
+/* The Close Button */
+.close {
+    color: var(--color-black);
+    font-size: var(--text-xl);
+    font-weight: 700;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-8);
+    align-items: stretch;
+    background-color: var(--color-white);
+    padding: var(--padding-6);
+    border-bottom-left-radius: var(--rounded-md);
+    border-bottom-right-radius: var(--rounded-md);
+}
+
+.input-group__container, .input-group__container--checkbox {
+ display: flex;
+ gap: var(--margin-4);
+}
+
+.input-group__container {
+    flex-direction: column;
+}
+
+.input-group__label {
+    font-size: var(--text-sm);
+}
+
+.input-group__input[type=text], .input-group__input[type=number] {
+    border: 1px solid var(--color-primary);
+    border-radius: var(--rounded-sm);
+    padding: var(--padding-4);
+    font-size: var(--text-sm);
+}
+
+.input-group__input[type=text]:focus, .input-group__input[type=number]:focus {
+    border: 1.5px solid var(--color-primary-focus);
+    outline-width: 1px;
+    outline-color: var(--color-primary-focus);
+}
+
+.input-group__input[type=checkbox] {
+    cursor: pointer;
+    accent-color: var(--color-background);
+    transform: scale(1.2);
+}
+
+.action-group__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: var(--margin-8);
+}
+
+.action-group__button--primary, .action-group__button--secondary {
+    padding: var(--padding-4);
+    border-radius: var(--rounded-sm);
+    font-size: var(--text-sm);
+    width: 64px;
+}
+
+.action-group__button--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.action-group__button--primary:hover, .action-group__button--primary:active {
+    background-color: var(--color-primary-focus);
+}
+
+.action-group__button--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+}
+
+.action-group__button--secondary:hover, .action-group__button--secondary:active {
+    background-color: var(--color-secondary-focus);
+    color: var(--color-black);
+}

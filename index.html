@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 - My Bookshelf</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1>Bookshelf Management</h1>
+        </div>
+    </header>
+    <main>
+        <div class="add__button">
+            <button id="openFormModalButton">Add New Book</button>
+        </div>
+        <div id="formModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content__container">
+                <section class="modal-content__title">
+                    <h2>Create New Book</h2>
+                    <span id="closeFormModalButton" class="close">&times;</span>
+                </section>
+                <form id="bookForm" class="modal-content__form">
+                    <div class="input-group__container">
+                        <label class="input-group__label">Title</label>
+                        <input class="input-group__input" placeholder="Book's title" name="title" id="title"
+                            type="text" />
+                    </div>
+                    <div class="input-group__container">
+                        <label class="input-group__label">Author</label>
+                        <input class="input-group__input" placeholder="Book's author" name="author" id="author"
+                            type="text" />
+                    </div>
+                    <div class="input-group__container">
+                        <label class="input-group__label">Year</label>
+                        <input class="input-group__input" placeholder="Book's released year" name="year" id="year"
+                            type="number" />
+                    </div>
+                    <div class="input-group__container--checkbox">
+                        <label class="input-group__label" for="isRead">Is Readed?</label>
+                        <input class="input-group__input" type="checkbox" id="isRead" name="isRead" />
+                    </div>
+                    <div class="action-group__container">
+                        <button id="cancelFormModalButton" type="button" class="action-group__button--secondary">Cancel</button>
+                        <button type="submit" class="action-group__button--primary">Save</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="empty-illustration__container">
+            <img width="100%" src="./assets/images/ill-empty-data.svg" alt="empty-data" />
+            <p>There is no books found, please add some.</p>
+        </div>
+
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
